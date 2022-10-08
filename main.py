@@ -49,9 +49,9 @@ async def addchat(_, message):
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
         kuki.insert_one({"chat_id": message.chat.id})
-        await message.reply_text(f"✅ | Successfully\nKuki Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
+        await message.reply_text(f"✅ | Successfully\nvictor Chatbot of this Group is set to @{message.chat.username}\n Requested by [{message.from_user.first_name}](tg://user?id={message.from_user.id})\n© @MetaVoid")
     else:
-        await message.reply_text(f"Already Setup Kuki Chatbot of this Group Is @{message.chat.username}")
+        await message.reply_text(f"Already Setup victor Chatbot of this Group Is @{message.chat.username}")
 
 
 @bot.on_message(
@@ -72,10 +72,10 @@ async def rmchat(_, message):
             )
     is_kuki = kuki.find_one({"chat_id": message.chat.id})
     if not is_kuki:
-        await message.reply_text("Already Kuki ChatBot Disable")
+        await message.reply_text("Already victor ChatBot Disabled")
     else:
         kuki.delete_one({"chat_id": message.chat.id})
-        await message.reply_text("✅ | Kuki Chatbot is disable!")
+        await message.reply_text("✅ | victor Chatbot is disabled!")
 
 
 
@@ -108,7 +108,7 @@ async def kukiai(client: Client, message: Message):
            else:
                msg = message.text
            try: 
-               x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+               x = requests.get(f"https://kukiapi.xyz/api/apikey=5043595447-KUKIUq9iSr0rz3/message={msg}").json()
                x = x['reply']
                await asyncio.sleep(1)
            except Exception as e:
@@ -135,7 +135,7 @@ async def kukiai(client: Client, message: Message):
     else:
         msg = message.text
     try:
-        x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+        x = requests.get(f"https://kukiapi.xyz/api/apikey=5043595447-KUKIUq9iSr0rz3/message={msg}").json()
         x = x['reply']
         await asyncio.sleep(1)
     except Exception as e:
@@ -156,7 +156,7 @@ async def kukiai(client: Client, message: Message):
     else:
         msg = message.text.replace(message.text.split(" ")[0], "")
     try:
-        x = requests.get(f"https://kukiapi.xyz/api/apikey={KUKI_API}/message={msg}").json()
+        x = requests.get(f"https://kukiapi.xyz/api/apikey=5043595447-KUKIUq9iSr0rz3/message={msg}").json()
         x = x['reply']
         await asyncio.sleep(1)
     except Exception as e:
@@ -182,12 +182,12 @@ async def start(client, message):
                             reply_markup=buttons)
         
     else:
-        buttons = [[InlineKeyboardButton("Support", url="https://t.me/metavoidsupport"),
-                    InlineKeyboardButton("Channel", url="https://t.me/metavoid"),
-                    InlineKeyboardButton("Repo", url="https://github.com/metavoidteam/kukichatbot")
+        buttons = [[InlineKeyboardButton("Support", url="https://t.me/Victor_Nikiforov_Support"),
+                    InlineKeyboardButton("Channel", url="https://t.me/Hashira_Association"),
+                    InlineKeyboardButton("Developer", url="https://Github.com/orofer-xt")
                     ]]
-        Photo = "https://telegra.ph/file/b04509cc8486f23690bba.jpg"
-        await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n Powered By @MetaVoid", reply_markup=InlineKeyboardMarkup(buttons))
+        Photo = "https://telegra.ph/file/5f167c376dc98c4566920.jpg"
+        await message.reply_photo(Photo, caption=f"Hello [{message.from_user.first_name}](tg://user?id={message.from_user.id}), Machine Learning Chat Bot that can talk about any topic in any language\n /help - Help Commands\n Powered By @Hashira_Association", reply_markup=InlineKeyboardMarkup(buttons))
 
 
 
@@ -203,7 +203,7 @@ async def help(client, message):
                             reply_markup=buttons)
         
     else:    
-        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active Kuki Chatbot In Group\n/removechat - Disable Kuki Chatbot In Group")
+        await message.reply_text("/start - Start The Bot\n/chat - Send a message to this bot\n/setupchat - Active victor Chatbot In Group\n/removechat - Disable viictor Chatbot In Group")
 
 
 
